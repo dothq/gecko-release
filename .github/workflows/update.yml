@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Checkout repository
         run: |
-          git clone https://${{ secrets.ROBOT_TOKEN }}@github.com/dothq/gecko-release -b ${GITHUB_REF#refs/heads/} gecko-release
+          git clone https://${{ secrets.ROBOT_TOKEN }}@github.com/dothq/gecko-release -b meta gecko-release
 
       - name: Setup Git identity
         working-directory: ./gecko-release
