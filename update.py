@@ -59,6 +59,8 @@ def main():
     os.system("git add .")
     os.system(f"git commit -m \"Firefox Release {current_ff_version}\"")
     os.system(f"git push -u origin release-{current_ff_version}")
+    os.system("git checkout latest")
+    os.system(f"git pull origin release-{current_ff_version}")
 
     print("All done.")
 
