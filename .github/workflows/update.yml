@@ -15,4 +15,4 @@ jobs:
           git config --global user.email "72629236+dothq-robot@users.noreply.github.com"
 
       - name: Run update script
-        run: wget https://github.com/dothq/gecko-release/blob/${{ github.sha }}/update.py && python3 update.py
+        run: wget https://raw.githubusercontent.com/dothq/gecko-release/${{ github.sha }}/update.py && python3 update.py
