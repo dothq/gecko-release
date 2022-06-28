@@ -9,10 +9,16 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        run: |
+          git clone https://${{ secrets.ROBOT_TOKEN }}@github.com/dothq/gecko-release -b ${GITHUB_REF#refs/heads/} gecko-release
+
       - name: Setup Git identity
+        working-directory: ./gecko-release
         run: |
           git config --global user.name "dothq-robot"
           git config --global user.email "72629236+dothq-robot@users.noreply.github.com"
 
       - name: Run update script
-        run: wget https://raw.githubusercontent.com/dothq/gecko-release/${{ github.sha }}/update.py && python3 update.py
+        working-directory: ./gecko-release
+        run: python3 update.py
