@@ -9,5 +9,10 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup Git identity
+        run: |
+          git config --global user.name "dothq-robot"
+          git config --global user.email "72629236+dothq-robot@users.noreply.github.com"
+
       - name: Run update script
         run: python3 update.py
