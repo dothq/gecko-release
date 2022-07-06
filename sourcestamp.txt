@@ -1,0 +1,2 @@
+20220705093820
+https://hg.mozilla.org/releases/mozilla-release/rev/a7294bfb43712ab3225c76087cd359a22ea8fa7d
